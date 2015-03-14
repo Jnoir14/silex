@@ -1,0 +1,16 @@
+{% extends 'root.twig' %}
+{% block body %}
+    <header>
+        {% block menu %}
+            {%  include 'topbar_layout.html.twig' %}
+        {% endblock %}
+    </header>
+
+    <section id="main-content">
+            {% block content %}{% endblock %}
+    </section>
+
+    <footer>
+        {%  include 'footer.twig' %}
+    </footer>
+{% endblock %}

@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+    Options -MultiViews -Indexes
+
+    RewriteEngine On
+
+    RewriteBase /
+
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^(css|fonts|js|img)/(.*)$ - [QSA,L]
+
+    RewriteRule ^(robots.txt|favicon.ico)$ - [QSA,L]
+
+    RewriteRule ^$ /index.html [QSA,L,R=301]
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>

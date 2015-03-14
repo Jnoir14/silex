@@ -1,0 +1,16 @@
+{
+	"require": {
+		"silex/silex": "1.*",
+        "doctrine/dbal": "~2.3",
+		"symfony/twig-bridge": "~2.4",
+        "symfony/validator": "~2.3",
+        "symfony/form": "~2.3",
+		"twig/twig": "1.*"
+
+	},
+	"autoload": {
+		"psr-0": {
+			"TestEmbauche": "src/"
+		}
+	}
+}

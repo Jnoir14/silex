@@ -1,0 +1,78 @@
+{% extends 'layout.twig' %}
+{% block metaTitleContent %}Contact{% endblock %}
+{% block h1Content %}Test d'embauche{% endblock %}
+{% block content %}
+<section class="contact">
+    <div class="container">
+     <div class="col-md-12 panelg gray pad8">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="/img/pivoine.png" class="img-responsive" id="fleur" alt=""/>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="text-center">Contact</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="text-center">
+                            EMAIL</br>
+                            EMAIL@gmail.com
+                        </h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="text-center">
+                            TEL</br>
+                            016565656565
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h2 class="text-center">Lorem</h2>
+                        <div class="col-center">
+                            <img src="/img/telephone.png" class="img-responsive" alt=""/>
+                        </div>
+                        <h2 class="text-center">SIRET 5656</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <p>Nom, prénom</p>
+                    <input type="text" name="prenom" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p>Email</p>
+                    <input type="email" name="email" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p>Email</p>
+                    <input type="email" name="email" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p>Téléphone</p>
+                    <input type="tel" name="telephone" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p>Téléphone</p>
+                    <input type="tel" name="telephone" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p>Date de Mariage</p>
+                    <input type="date" name="date-mariage" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p>Dite moi tout!</p>
+                    <input type="text" name="say-all" class="form-control"/>
+                </div>
+                <button type="submit" class="pull-right">Envoyer</button>
+            </div>
+        </div>
+     </div>
+    </div>
+</section>
+
+{% endblock %}
