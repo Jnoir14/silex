@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestEmbauche/templates/index.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.222221" vertical-offset="579" max-vertical-offset="1368">
-              <caret line="61" column="56" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.4679803" vertical-offset="219" max-vertical-offset="1368">
+              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -119,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8357964" vertical-offset="74929" max-vertical-offset="118260">
-              <caret line="4191" column="26" selection-start-line="4191" selection-start-column="26" selection-end-line="4191" selection-end-column="26" />
+            <state vertical-scroll-proportion="-14.851851" vertical-offset="74929" max-vertical-offset="118260">
+              <caret line="4185" column="32" selection-start-line="4185" selection-start-column="32" selection-end-line="4185" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -174,10 +174,10 @@
         <option value="$PROJECT_DIR$/src/TestEmbauche/Model/Article.php" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/Ctrl/BlogCtrl.php" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/TestEmbaucheApplication.php" />
-        <option value="$PROJECT_DIR$/src/TestEmbauche/templates/index.twig" />
         <option value="$PROJECT_DIR$/web/css/app.css" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/templates/topbar_layout.twig" />
         <option value="$PROJECT_DIR$/web/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/src/TestEmbauche/templates/index.twig" />
       </list>
     </option>
   </component>
@@ -857,18 +857,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestEmbauche/templates/index.twig">
+    <entry file="file://$PROJECT_DIR$/web/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.222221" vertical-offset="579" max-vertical-offset="1368">
-          <caret line="61" column="56" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
+        <state vertical-scroll-proportion="-14.851851" vertical-offset="74929" max-vertical-offset="118260">
+          <caret line="4185" column="32" selection-start-line="4185" selection-start-column="32" selection-end-line="4185" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/src/TestEmbauche/templates/index.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8357964" vertical-offset="74929" max-vertical-offset="118260">
-          <caret line="4191" column="26" selection-start-line="4191" selection-start-column="26" selection-end-line="4191" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.4679803" vertical-offset="219" max-vertical-offset="1368">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
           <folding />
         </state>
       </provider>
