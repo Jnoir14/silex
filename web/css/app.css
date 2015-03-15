@@ -48,7 +48,7 @@ header a{color: rgba(0, 0, 0, 0.72);}
 
 /*Footer*/
 .footer{height: 75px;}
-.footericone>a>img{float: left;}
+.footericone a{padding: 5px!important;}
 
 /* CONTACT */
 .row-border{border: solid 1px rgba(0, 0, 0, 0.72); border-left: none; border-right: none;}
