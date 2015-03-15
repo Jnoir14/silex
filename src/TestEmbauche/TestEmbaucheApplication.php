@@ -4,6 +4,7 @@ namespace TestEmbauche;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Silex\Application\UrlGeneratorTrait;
+use Silex\Provider\DoctrineServiceProvider;
 
 class TestEmbaucheApplication extends \Silex\Application
 {
@@ -31,6 +32,17 @@ class TestEmbaucheApplication extends \Silex\Application
             new \Silex\Provider\TwigServiceProvider(),
 			$this->_configArray
         );
+
+        //Db
+        $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+            'db.options' => array(
+                'driver' => 'pdo_mysql',
+                'dbhost' => 'localhost',
+                'dbname' => 'silex',
+                'user' => 'root',
+                'password' => 'dragon34790',
+            ),
+        ));
 
         // Error
         $app->error(function (\Exception $e, $code) use ($app) {
