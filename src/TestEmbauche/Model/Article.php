@@ -1,8 +1,8 @@
 <?php
 
-namespace TestEmbauche\Models;
+namespace TestEmbauche\Model;
 
-class Comment
+class Article
 {
     /**
      * Comment id.
@@ -13,11 +13,11 @@ class Comment
 
 
     /**
-     * Comment.
+     * article.
      *
      * @var string
      */
-    protected $comment;
+    protected $article;
 
     /**
      * Published.
@@ -43,14 +43,14 @@ class Comment
         $this->id = $id;
     }
 
-    public function getComment()
+    public function getArticle()
     {
-        return $this->comment;
+        return $this->article;
     }
 
-    public function setComment($comment)
+    public function setArticle($article)
     {
-        $this->comment = $comment;
+        $this->article = $article;
     }
 
     public function getPublished()

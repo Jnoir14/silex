@@ -4,7 +4,6 @@ namespace TestEmbauche;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Silex\Application\UrlGeneratorTrait;
-use Silex\Provider\DoctrineServiceProvider;
 
 class TestEmbaucheApplication extends \Silex\Application
 {
@@ -33,15 +32,18 @@ class TestEmbaucheApplication extends \Silex\Application
 			$this->_configArray
         );
 
+        # form
+        $app->register(new \Silex\Provider\FormServiceProvider());
+
         //Db
-        $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+        $app->register(new \Silex\Provider\DoctrineServiceProvider(), array(
             'db.options' => array(
                 'driver' => 'pdo_mysql',
                 'dbhost' => 'localhost',
                 'dbname' => 'silex',
                 'user' => 'root',
                 'password' => 'dragon34790',
-            ),
+            )
         ));
 
         // Error
@@ -54,7 +56,7 @@ class TestEmbaucheApplication extends \Silex\Application
                     $message = 'Page non trouvé';
                     break;
                 default:
-                    $message = 'Erreur iconnue';
+                    return;
             }
             return new Response($message, $code);
         });
