@@ -65,7 +65,7 @@ class TestEmbaucheApplication extends \Silex\Application
     public function registerRoutes()
     {
         $app = $this;
-        $app->match('/home','TestEmbauche\Ctrl\HomeCtrl::indexAction')->bind('homepage');
+        $app->match('/index.html','TestEmbauche\Ctrl\HomeCtrl::indexAction')->bind('homepage');
         $app->match('/info','TestEmbauche\Ctrl\InfoCtrl::indexAction')->bind('infopage');
         $app->match('/blog','TestEmbauche\Ctrl\BlogCtrl::indexAction')->bind('blogpage');
         $app->get('/blog/add','TestEmbauche\Ctrl\BlogCtrl::addAction')->bind('blog_addpage');
