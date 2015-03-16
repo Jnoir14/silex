@@ -45,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestEmbaucheApplication.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestEmbaucheApplication.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestEmbauche/TestEmbaucheApplication.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8226601" vertical-offset="849" max-vertical-offset="1458">
+            <state vertical-scroll-proportion="-18.555555" vertical-offset="849" max-vertical-offset="1458">
               <caret line="75" column="1" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
               <folding>
                 <element signature="e#31#76#0#PHP" expanded="true" />
@@ -77,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="683" max-vertical-offset="1350">
-              <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.822327" vertical-offset="683" max-vertical-offset="1350">
+              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,8 +174,8 @@
         <option value="$PROJECT_DIR$/web/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/templates/index.twig" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/templates/info.twig" />
-        <option value="$PROJECT_DIR$/web/css/app.css" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/TestEmbaucheApplication.php" />
+        <option value="$PROJECT_DIR$/web/css/app.css" />
       </list>
     </option>
   </component>
@@ -851,21 +851,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="683" max-vertical-offset="1350">
-          <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestEmbauche/TestEmbaucheApplication.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8226601" vertical-offset="849" max-vertical-offset="1458">
+        <state vertical-scroll-proportion="-18.555555" vertical-offset="849" max-vertical-offset="1458">
           <caret line="75" column="1" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
           <folding>
             <element signature="e#31#76#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.822327" vertical-offset="683" max-vertical-offset="1350">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
