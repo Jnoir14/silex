@@ -13,11 +13,11 @@ class Article
 
 
     /**
-     * article.
+     * articles.
      *
      * @var string
      */
-    protected $article;
+    protected $articles;
 
     /**
      * Published.
@@ -43,14 +43,14 @@ class Article
         $this->id = $id;
     }
 
-    public function getArticle()
+    public function getArticles()
     {
-        return $this->article;
+        return $this->articles;
     }
 
-    public function setArticle($article)
+    public function setArticles($articles)
     {
-        $this->article = $article;
+        $this->articles = $articles;
     }
 
     public function getPublished()

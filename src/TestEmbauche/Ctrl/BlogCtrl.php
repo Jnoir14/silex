@@ -3,35 +3,39 @@
 namespace TestEmbauche\Ctrl;
 
 use TestEmbauche\Model\Article;
-use TestEmbauche\Form\Type\CommentType;
+use TestEmbauche\Form\Type\ArticleType;
 use Silex\Application;
-use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 
 
 class BlogCtrl
 {
-    public function indexAction(Request $request, Application $app){
-        return $app['twig']->render('blog.twig');
+    public function indexAction(Application $app){
+        $articles= $app['repository.article']->showAll();
+        return $app['twig']->render('blog.twig', array("articles" => $articles));
     }
 
-    public function addAction(Request $request, Application $app)
+    public function createAction( Application $app)
     {
         $article = new Article();
-        $form = $app['form.factory']->create(new CommentType(), $article);
+        $form = $app['form.factory']->create(new ArticleType(),$article);
+        return $app['twig']->render('blog-add.twig', array('form' => $form->createView()));
+    }
 
+    public function postAction(Request $request, Application $app)
+    {
+        $form = $app['form.factory']->create(new ArticleType());
         if ($request->isMethod('POST')) {
             $form->bind($request);
             if ($form->isValid()) {
-                $app['silex.comment']->save($article);
-                return $app->redirect("blogpage");
+                $dataArticle = $form->getData();
+                $article = new Article();
+                $article->setArticles($dataArticle['articles']);
+                $app['repository.article']->save($article);
             }
         }
-
-        $data = array(
-            'form' => $form->createView(),
-            'title' => 'Add new user',
-        );
-        return $app['twig']->render('blog-add.twig', $data);
+        return new Response("ok");
     }
 }

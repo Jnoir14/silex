@@ -1,0 +1,14 @@
+{% extends 'layout.twig' %}
+{% set active = 'form' %}
+
+{% block content %}
+    <div id="main" role="main" class="container">
+        {% set alertTypeAvaillable = [ 'info', 'success', 'warning', 'error'] %}
+
+
+        <form action="" method="post" {{ form_enctype(form) }} class="form-horizontal">
+            {{ form_widget(form) }}
+        </form>
+    </div>
+
+{% endblock %}

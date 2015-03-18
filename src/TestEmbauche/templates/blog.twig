@@ -3,4 +3,7 @@
 {% block h1Content %}Test d'embauche{% endblock %}
 {% block content %}
 <p>blog</p>
+    {% for article in articles %}
+        {{ article.articles }}
+    {% endfor %}
 {% endblock %}
