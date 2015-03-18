@@ -47,7 +47,7 @@ class TestEmbaucheApplication extends \Silex\Application
                 'dbhost' => 'localhost',
                 'dbname' => 'silex',
                 'user' => 'root',
-                'password' => '',
+                'password' => '*******',
             )
         ));
 
