@@ -26,7 +26,7 @@ class ArticleRepository
     public function save($article)
     {
         $articleData = array(
-            'articles' => $article->getArticles(),
+            'content' => $article->getContent(),
             'published' => "0265",
         );
 

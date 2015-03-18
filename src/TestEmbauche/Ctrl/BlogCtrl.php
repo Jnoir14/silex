@@ -32,7 +32,7 @@ class BlogCtrl
             if ($form->isValid()) {
                 $dataArticle = $form->getData();
                 $article = new Article();
-                $article->setArticles($dataArticle['articles']);
+                $article->setContent($dataArticle['article']);
                 $app['repository.article']->save($article);
             }
         }

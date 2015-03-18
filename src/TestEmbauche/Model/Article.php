@@ -2,6 +2,7 @@
 
 namespace TestEmbauche\Model;
 
+
 class Article
 {
     /**
@@ -11,20 +12,26 @@ class Article
      */
     protected $id;
 
-
     /**
-     * articles.
+     * Title.
      *
      * @var string
      */
-    protected $articles;
+    protected $title;
 
     /**
-     * Published.
+     * Content.
      *
-     * @var boolean
+     * @var string
      */
-    protected $published;
+    protected $content;
+
+    /**
+     * Category.
+     *
+     * @var \TestEmbauche\Model\Category
+     */
+    protected $category;
 
     /**
      * When the comment entity was created.
@@ -43,24 +50,24 @@ class Article
         $this->id = $id;
     }
 
-    public function getArticles()
+    public function getTitle()
     {
-        return $this->articles;
+        return $this->title;
     }
 
-    public function setArticles($articles)
+    public function setTitle($title)
     {
-        $this->articles = $articles;
+        $this->title = $title;
     }
 
-    public function getPublished()
+    public function getContent()
     {
-        return $this->published;
+        return $this->content;
     }
 
-    public function setPublished($published)
+    public function setContent($content)
     {
-        $this->published = $published;
+        $this->content = $content;
     }
 
     public function getCreatedAt()
