@@ -56,6 +56,10 @@ class TestEmbaucheApplication extends \Silex\Application
             return new \TestEmbauche\Repository\ArticleRepository($app['db']);
         });
 
+        $app['repository.category'] = $app->share(function ($app) {
+            return new \TestEmbauche\Repository\CategoryRepository($app['db']);
+        });
+
         // Error
         $app->error(function (\Exception $e, $code) use ($app) {
             if ($app['debug']) {

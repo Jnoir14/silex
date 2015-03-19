@@ -4,6 +4,7 @@
 {% block content %}
 <p>blog</p>
     {% for article in articles %}
+        <a href="{{ path('blog.article.show', {id: article.id}) }}" >show</a>
         {{ article.content }}
     {% endfor %}
 {% endblock %}

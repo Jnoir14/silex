@@ -10,8 +10,17 @@ class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        // Pas top (a modifier) manque de fetchAssoc :(
+        $data= array();
+        foreach ($options['data'] as $dataRows){
+            $data +=array($dataRows['id'] => $dataRows['name']);
+        }
         $builder
-            ->add('content', 'textarea',array('label' => 'Post Article'));
+            ->add('title', 'text',array('label' => 'Post Article'))
+            ->add('content', 'textarea',array('label' => 'Post Article'))
+            ->add('category', 'choice', array(
+            'choices' => $data
+            ));
     }
 
     public function getName()

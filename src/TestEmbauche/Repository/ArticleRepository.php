@@ -13,7 +13,19 @@ class ArticleRepository
         $this->db = $db;
     }
 
-    public function showAll(){
+    public function getByid($id){
+        $queryBuilder = $this->db->createQueryBuilder('a');
+        $queryBuilder
+            ->select('a.*')
+            ->from('article', 'a')
+            ->where('a.id = :id')
+            ->setParameter('id', $id);
+        $statement = $queryBuilder->execute();
+        $articleData = $statement->fetch();
+        return $articleData;
+    }
+
+    public function getAll(){
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder
             ->select('a.*')
@@ -26,8 +38,9 @@ class ArticleRepository
     public function save($article)
     {
         $articleData = array(
-            'content' => $article->getContent(),
-            'published' => "0265",
+            'title'   =>  $article->getTitle(),
+            'content' =>  $article->getContent(),
+            'category_id'=>  $article->getCategory(),
         );
 
         if ($article->getId()) {
@@ -41,5 +54,10 @@ class ArticleRepository
             $id = $this->db->lastInsertId();
             $article->setId($id);
         }
+    }
+
+    public function delete($id)
+    {
+        return $this->db->delete('article', array('id' => $id));
     }
 }
