@@ -22,7 +22,7 @@ class CategoryCtrl
     {
         $category = new Category();
         $form = $app['form.factory']->create(new CategoryType(),$category);
-        return $app['twig']->render('blog-add-category.twig', array('form' => $form->createView()));
+        return $app['twig']->render('Blog/Category/blog-add-category.twig', array('form' => $form->createView()));
     }
 
     public function postAction(Request $request, Application $app)

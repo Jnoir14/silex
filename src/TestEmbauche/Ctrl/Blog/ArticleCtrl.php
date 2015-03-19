@@ -18,7 +18,7 @@ class ArticleCtrl
     public function showAction( Application $app, $id)
     {
         $article= $app['repository.article']->getById($id);
-        return $app['twig']->render('blog-article-show.twig', array('article' => $article));
+        return $app['twig']->render('Blog/Article/blog-article-show.twig', array('article' => $article));
     }
     /*
      *  createAction
@@ -28,7 +28,7 @@ class ArticleCtrl
     {
         $article = new Article();
         $form   = $this->createCreateForm($app,$article);
-        return $app['twig']->render('blog-add.twig', array('form' => $form->createView()));
+        return $app['twig']->render('Blog/Article/blog-article-add.twig', array('form' => $form->createView()));
     }
 
     public function createCreateForm(Application $app, $article){

@@ -16,11 +16,10 @@ class ArticleType extends AbstractType
             $data +=array($dataRows['id'] => $dataRows['name']);
         }
         $builder
-            ->add('title', 'text',array('label' => 'Post Article'))
-            ->add('content', 'textarea',array('label' => 'Post Article'))
-            ->add('category', 'choice', array(
-            'choices' => $data
-            ));
+            ->add('title', 'text',array('label' => 'Titre', 'attr' => array('class'=>'form-control')))
+            ->add('content', 'textarea',array('label' => 'Contenu', 'attr' => array('class'=>'form-control')))
+            ->add('category', 'choice', array('choices' => $data, 'attr' => array('class'=>'form-control')))
+        ;
     }
 
     public function getName()

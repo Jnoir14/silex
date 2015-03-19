@@ -11,6 +11,6 @@ class BlogCtrl
     public function indexAction(Application $app)
     {
         $articles = $app['repository.article']->getAll();
-        return $app['twig']->render('blog.twig', array("articles" => $articles));
+        return $app['twig']->render('/Blog/index.twig', array("articles" => $articles));
     }
 }

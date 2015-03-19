@@ -13,6 +13,7 @@ $app->get("/blog/article/delete/{id}", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::dele
 //BLOG=>CATEGORY
 $app->get("/blog/category/create", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::createAction')->bind("blog.category.create");
 $app->post("/blog/category/post", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::postAction')->bind("blog.category.post");
+$app->post("/blog/category/delete", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::deleteAction')->bind("blog.category.delete");
 
 $app->match('/realisations','TestEmbauche\Ctrl\WorkCtrl::indexAction')->bind('workpage');
 $app->match('/contact','TestEmbauche\Ctrl\ContactCtrl::indexAction')->bind('contactpage');

@@ -2,10 +2,8 @@
 {% block metaTitleContent %}Test d'embauche{% endblock %}
 {% block h1Content %}Test d'embauche{% endblock %}
 {% block content %}
-    <p>ds</p>
-    <form action="{{ path('blog.article.post') }}" method="post">
-        {{ form_widget(form) }}
-
-        <input type="submit" name="submit" />
-    </form>
+    <div class="col-center">
+        <h1>{{ article.content }}</h1>
+        <p>{{ article.content }}</p>
+    </div>
 {% endblock %}
