@@ -28,8 +28,8 @@
       <file leaf-file-name="ArticleCtrl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/ArticleCtrl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.222222" vertical-offset="633" max-vertical-offset="1242">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="62" selection-end-column="5" />
+            <state vertical-scroll-proportion="-8.555555" vertical-offset="273" max-vertical-offset="1314">
+              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
               <folding>
                 <element signature="e#42#73#0#PHP" expanded="true" />
               </folding>
@@ -40,8 +40,8 @@
       <file leaf-file-name="ArticleRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Repository/ArticleRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.703703" vertical-offset="620" max-vertical-offset="1242">
-              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            <state vertical-scroll-proportion="-22.666666" vertical-offset="378" max-vertical-offset="1242">
+              <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -50,8 +50,8 @@
       <file leaf-file-name="CategoryRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Repository/CategoryRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="954">
-              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state vertical-scroll-proportion="-10.555555" vertical-offset="75" max-vertical-offset="954">
+              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -73,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="414">
-              <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+              <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -89,11 +89,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="blog-add.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TestEmbauche/templates/blog-add.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="288">
+              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CategoryCtrl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/CategoryCtrl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.888889" vertical-offset="21" max-vertical-offset="1008">
-              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+            <state vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="1008">
+              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
               <folding>
                 <element signature="e#42#82#0#PHP" expanded="true" />
               </folding>
@@ -114,22 +124,10 @@
       <file leaf-file-name="TestEmbaucheApplication.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestEmbauche/TestEmbaucheApplication.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42122185" vertical-offset="620" max-vertical-offset="1512">
+            <state vertical-scroll-proportion="0.72347265" vertical-offset="432" max-vertical-offset="1512">
               <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
               <folding>
                 <element signature="e#31#76#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blog-article-show.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TestEmbauche/templates/blog-article-show.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.0" vertical-offset="0" max-vertical-offset="216">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-              <folding>
-                <marker date="1426720393211" expanded="true" signature="137:211" placeholder="{% block content ...%}" />
               </folding>
             </state>
           </provider>
@@ -190,11 +188,11 @@
         <option value="$PROJECT_DIR$/src/TestEmbauche/Repository/ArticleRepository.php" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/Ctrl/BlogCtrl.php" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/Ctrl/ArticleCtrl.php" />
-        <option value="$PROJECT_DIR$/src/routes.php" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/BlogCtrl.php" />
-        <option value="$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/ArticleCtrl.php" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/CategoryCtrl.php" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/Repository/CategoryRepository.php" />
+        <option value="$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/ArticleCtrl.php" />
+        <option value="$PROJECT_DIR$/src/routes.php" />
         <option value="$PROJECT_DIR$/src/TestEmbauche/TestEmbaucheApplication.php" />
       </list>
     </option>
@@ -847,20 +845,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestEmbauche/templates/blog-add.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="288">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestEmbauche/templates/blog-article-show.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.0" vertical-offset="0" max-vertical-offset="216">
           <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
           <folding>
-            <marker date="1426720393211" expanded="true" signature="137:211" placeholder="{% block content ...%}" />
+            <marker date="1426720393211" expanded="true" signature="-1:-1" placeholder="{% block content ...%}" />
           </folding>
         </state>
       </provider>
@@ -869,6 +859,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="270">
           <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/BlogCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.0" vertical-offset="0" max-vertical-offset="378">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestEmbauche/templates/blog-add.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="288">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -883,61 +889,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="414">
-          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/BlogCtrl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0" vertical-offset="0" max-vertical-offset="378">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/ArticleCtrl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.222222" vertical-offset="633" max-vertical-offset="1242">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="62" selection-end-column="5" />
+        <state vertical-scroll-proportion="-8.555555" vertical-offset="273" max-vertical-offset="1314">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
           <folding>
             <element signature="e#42#73#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/CategoryCtrl.php">
+    <entry file="file://$PROJECT_DIR$/src/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.888889" vertical-offset="21" max-vertical-offset="1008">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding>
-            <element signature="e#42#82#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="414">
+          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Repository/ArticleRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.703703" vertical-offset="620" max-vertical-offset="1242">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state vertical-scroll-proportion="-22.666666" vertical-offset="378" max-vertical-offset="1242">
+          <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Repository/CategoryRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="954">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        <state vertical-scroll-proportion="-10.555555" vertical-offset="75" max-vertical-offset="954">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestEmbauche/Ctrl/Blog/CategoryCtrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="1008">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding>
+            <element signature="e#42#82#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestEmbauche/TestEmbaucheApplication.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42122185" vertical-offset="620" max-vertical-offset="1512">
+        <state vertical-scroll-proportion="0.72347265" vertical-offset="432" max-vertical-offset="1512">
           <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
           <folding>
             <element signature="e#31#76#0#PHP" expanded="true" />

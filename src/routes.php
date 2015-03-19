@@ -6,7 +6,7 @@ $app->match('/info','TestEmbauche\Ctrl\InfoCtrl::indexAction')->bind('infopage')
 //BLOG
 $app->match('/blog','TestEmbauche\Ctrl\Blog\BlogCtrl::indexAction')->bind('blog');
 //BLOG=>ARTICLE
-$app->get("/blog/article/add", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::createAction')->bind("blog.article.create");
+$app->get("/blog/article/add", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::newAction')->bind("blog.article.create");
 $app->post("/blog/article/post", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::postAction')->bind("blog.article.post");
 $app->get("/blog/article/show/{id}", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::showAction')->bind("blog.article.show");
 $app->get("/blog/article/delete/{id}", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::deleteAction')->bind("blog.article.delete");

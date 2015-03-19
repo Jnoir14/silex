@@ -24,12 +24,17 @@ class ArticleCtrl
      *  createAction
      *  Creation du formulaire Template
      */
-    public function createAction( Application $app)
+    public function newAction( Application $app)
     {
         $article = new Article();
+        $form   = $this->createCreateForm($app,$article);
+        return $app['twig']->render('blog-add.twig', array('form' => $form->createView()));
+    }
+
+    public function createCreateForm(Application $app, $article){
         $articles= $app['repository.category']->getAll();
         $form = $app['form.factory']->create(new ArticleType(), $article, array('data' => $articles));
-        return $app['twig']->render('blog-add.twig', array('form' => $form->createView()));
+        return $form;
     }
 
     /*
@@ -38,8 +43,7 @@ class ArticleCtrl
     public function postAction(Request $request, Application $app)
     {
         $article = new Article();
-        $articles= $app['repository.category']->getAll();
-        $form = $app['form.factory']->create(new ArticleType(), $article, array('data' => $articles));
+        $form   = $this->createCreateForm($app,$article);
         if ($request->isMethod('POST')) {
             $form->bind($request);
             if ($form->isValid()) {
