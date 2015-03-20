@@ -42,6 +42,6 @@ class CategoryRepository
 
     public function delete($id)
     {
-        return $this->db->delete('category', array('id' => $id));
+        return $this->db->delete('category', array('comment_id' => $id));
     }
 }

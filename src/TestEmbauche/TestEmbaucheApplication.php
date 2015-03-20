@@ -24,6 +24,9 @@ class TestEmbaucheApplication extends \Silex\Application
     {
         $app = $this;
 
+        // session
+        $app->register(new \Silex\Provider\SessionServiceProvider());
+
         // generateur d'url
         $app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 
@@ -47,7 +50,7 @@ class TestEmbaucheApplication extends \Silex\Application
                 'dbhost' => 'localhost',
                 'dbname' => 'silex',
                 'user' => 'root',
-                'password' => '',
+                'password' => 'dragon34790',
             )
         ));
 
@@ -58,6 +61,10 @@ class TestEmbaucheApplication extends \Silex\Application
 
         $app['repository.category'] = $app->share(function ($app) {
             return new \TestEmbauche\Repository\CategoryRepository($app['db']);
+        });
+
+        $app['repository.user'] = $app->share(function ($app) {
+            return new \TestEmbauche\Repository\UserRepository($app['db'], $app['security.encoder.digest']);
         });
 
         // Error
@@ -74,5 +81,36 @@ class TestEmbaucheApplication extends \Silex\Application
             }
             return new Response($message, $code);
         });
+
+        // Users
+        $app->register(new \Silex\Provider\SecurityServiceProvider(), array(
+            'security.firewalls' => array(
+                'admin' => array(
+                    'pattern' => '^/admin/',
+                    'form' => array(
+                        'login_path' => '/login',
+                        'check_path' => '/admin/login_check',
+                        'username_parameter' => 'form[username]',
+                        'password_parameter' => 'form[password]',
+                    ),
+                    'logout'  => true,
+                    'anonymous' => true,
+                    'users' => $app->share(function () use ($app) {
+                        return new \TestEmbauche\Repository\UserRepository($app['db'], $app['security.encoder.digest']);
+                    }),
+                ),
+            ),
+            'security.role_hierarchy' => array(
+                'ROLE_ADMIN' => array('ROLE_USER'),
+            ),
+        ));
+
+        /*
+         *  Return Db table /!\ ONLY FOR DEV
+         *  @parm $app
+         *  @return class db
+         */
+        return new Db_creator($app);
+
     }
 }
