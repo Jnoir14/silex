@@ -86,14 +86,14 @@ class TestEmbaucheApplication extends \Silex\Application
         $app->register(new \Silex\Provider\SecurityServiceProvider(), array(
             'security.firewalls' => array(
                 'admin' => array(
-                    'pattern' => '^/admin/',
+                    'pattern' => '^.*$',
                     'form' => array(
                         'login_path' => '/login',
                         'check_path' => '/admin/login_check',
                         'username_parameter' => 'form[username]',
                         'password_parameter' => 'form[password]',
                     ),
-                    'logout'  => true,
+                    'logout' => array('logout_path' => '/admin/logout'),
                     'anonymous' => true,
                     'users' => $app->share(function () use ($app) {
                         return new \TestEmbauche\Repository\UserRepository($app['db'], $app['security.encoder.digest']);
@@ -103,6 +103,9 @@ class TestEmbaucheApplication extends \Silex\Application
             'security.role_hierarchy' => array(
                 'ROLE_ADMIN' => array('ROLE_USER'),
             ),
+            'security.access_rules' => array(
+                array('^/admin', 'ROLE_ADMIN')
+            )
         ));
 
         /*

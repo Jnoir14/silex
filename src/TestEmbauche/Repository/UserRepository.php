@@ -68,7 +68,9 @@ class UserRepository implements UserProviderInterface
         return $userData ? $this->buildUser($userData) : FALSE;
     }
 
-
+    /*
+     * Hériter de userprov
+     */
     public function loadUserByUsername($username)
     {
         $queryBuilder = $this->db->createQueryBuilder();
@@ -89,7 +91,9 @@ class UserRepository implements UserProviderInterface
         return $user;
     }
 
-
+    /*
+     * Hériter de userprov
+     */
     public function refreshUser(UserInterface $user)
     {
         $class = get_class($user);
@@ -106,13 +110,17 @@ class UserRepository implements UserProviderInterface
         return $refreshedUser;
     }
 
-
+    /*
+     * Hériter de userprov
+     */
     public function supportsClass($class)
     {
         return 'TestEmbauche\Model\User' === $class;
     }
 
-
+    /*
+     * Retourne une entité user apartir des résultats
+     */
     protected function buildUser($userData)
     {
         $user = new User();
