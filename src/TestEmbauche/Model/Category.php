@@ -20,7 +20,6 @@ class Category
     protected $name;
 
 
-
     public function getId()
     {
         return $this->id;

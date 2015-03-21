@@ -24,26 +24,16 @@ class ArticleCtrl
      *  createAction
      *  Creation du formulaire Template
      */
-    public function newAction( Application $app)
+    public function addAction(Request $request, Application $app)
     {
-        $article = new Article();
-        $form   = $this->createCreateForm($app,$article);
-        return $app['twig']->render('Blog/Article/blog-article-add.twig', array('form' => $form->createView()));
-    }
-
-    public function createCreateForm(Application $app, $article){
         $articles= $app['repository.category']->getAll();
-        $form = $app['form.factory']->create(new ArticleType(), $article, array('data' => $articles));
-        return $form;
-    }
-
-    /*
-     *
-     */
-    public function postAction(Request $request, Application $app)
-    {
-        $article = new Article();
-        $form   = $this->createCreateForm($app,$article);
+        // Pas top :(
+        $data= array();
+        foreach ($articles as $dataRows){
+            $data +=array($dataRows['id'] => $dataRows['name']);
+        }
+        $article =  new Article();
+        $form = $app['form.factory']->create(new ArticleType(), $article, array('data'=>$data));
         if ($request->isMethod('POST')) {
             $form->bind($request);
             if ($form->isValid()) {
@@ -52,9 +42,10 @@ class ArticleCtrl
                 $article->setContent($dataArticle['content']);
                 $article->setCategory($dataArticle['category']);
                 $app['repository.article']->save($article);
+                return $app->redirect($app['url_generator']->generate('blog'));
             }
         }
-        return $app['url_generator']->generate('blog');
+        return $app['twig']->render('Blog/Article/blog-article-add.twig', array('form' => $form->createView()));
     }
 
     /*
@@ -63,6 +54,6 @@ class ArticleCtrl
     public function deleteAction( Application $app, $id)
     {
         $app['repository.article']->delete();
-        return $app['url_generator']->generate('blog');
+        return $app->redirect($app['url_generator']->generate('blog'));
     }
 }

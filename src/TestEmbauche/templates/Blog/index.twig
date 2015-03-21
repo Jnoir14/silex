@@ -4,8 +4,8 @@
 {% block content %}
     <div class="col-center">
         <h1>Blog</h1>
-        <a class="" href="{{ path('blog.article.create')}}" >+Article</a>
-        <a class="" href="{{ path('blog.category.create')}}" >+Category</a>
+        <a class="" href="{{ path('blog.article.add')}}" >+Article</a>
+        <a class="" href="{{ path('blog.category.add')}}" >+Category</a>
         <a href="{{ path('admin_logout') }}">Logout</a>
         {% for article in articles %}
             <h2>{{ article.title }}</h2>

@@ -4,10 +4,6 @@
 {% block content %}
     <div class="col-center">
         <h1>Creation Article</h1>
-        <form action="{{ path('blog.article.post') }}" method="post">
-            {{ form_widget(form) }}
-
-            <input type="submit" name="submit" />
-        </form>
+        {{ form(form) }}
     </div>
 {% endblock %}

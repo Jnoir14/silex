@@ -8,12 +8,13 @@
     <div class="carousel-inner">
         <div class="item active">
             <div class="row">
-                <div class="col-sm-4"><a href="#x"><img src="/img/photos/rea/abstract-h-c-1000-1500-7.jpg" class="img-responsive"></a>
+                {% for work in works %}
+                <div class="col-sm-4">
+                    <a href="{{ path('works.show',{ 'id': work.id }) }}">
+                        <img src="/img/works/{{ work.image_path }}" class="img-responsive">
+                    </a>
                 </div>
-                <div class="col-sm-4"><a href="#x"><img src="/img/photos/rea/animals-q-g-1500-1000-2.jpg" class="img-responsive"></a>
-                </div>
-                <div class="col-sm-4"><a href="#x"><img src="/img/photos/rea/city-q-c-1500-1000-4.jpg" alt="Image" class="img-responsive"></a>
-                </div>
+                {% endfor %}
             </div>
             <!--/row-->
         </div>

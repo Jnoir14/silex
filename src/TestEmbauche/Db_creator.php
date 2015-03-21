@@ -40,12 +40,24 @@ class Db_creator{
 
             $app['db']->insert('users', array(
                 'username' => 'admin',
-                'salt' => '1260889385528018eda0a12',
-                'password' => 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec',
+                'salt' => '740921876550bfb58c38c7',
+                'password' => 'BCKy17YZwdTYXE67stbIqMce15bgsrIKtdpiJEScZlT3BcS5glZYTXUHf5z1p6PxCSC0kijV9cU/Jfo09b5YuQ==',
                 'mail'   =>'admin@gmail.com',
                 'role' => 'ROLE_ADMIN',
                 'created_at' => '1379889332'
             ));
+        }
+
+        if (!$schema->tablesExist('works')) {
+            $works = new Table('works');
+            $works->addColumn('id', 'integer', array('unsigned' => true, 'autoincrement' => true));
+            $works->setPrimaryKey(array('id'));
+            $works->addColumn('title', 'string', array('length' => 32));
+            $works->addColumn('content', 'string', array('length' => 255));
+            $works->addColumn('image_path', 'string', array('length' => 32));
+            $works->addColumn('created_at', 'integer', array('length' => 11));
+
+            $schema->createTable($works);
         }
 
         return new Response("Db create ok");

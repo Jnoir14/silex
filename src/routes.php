@@ -15,12 +15,14 @@ $app->get("/login", 'TestEmbauche\Ctrl\UserCtrl::loginAction')->bind("login");
 $app->get("/logout", 'TestEmbauche\Ctrl\UserCtrl::logoutAction')->bind("logout");
 
 //ADMIN
+$app->get("/admin/", 'TestEmbauche\Ctrl\Blog\AdminCtrl::indexAction')->bind("admin.index");
 $app->get("/user/add", 'TestEmbauche\Ctrl\UserCtrl::addAction')->bind("user.add")->method('GET|POST');
 //ADMIN=>BLOG=>CATEGORY
-$app->get("/admin/blog/category/create", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::createAction')->bind("blog.category.create");
-$app->post("/admin/blog/category/post", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::postAction')->bind("blog.category.post");
+$app->get("/admin/blog/category/add", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::addAction')->bind("blog.category.add")->method('GET|POST');
 $app->post("/admin/blog/delete", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::deleteAction')->bind("blog.category.delete");
 //BLOG=>ARTICLE
-$app->get("/admin/blog/article/add", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::newAction')->bind("blog.article.create");
-$app->post("/admin/blog/article/post", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::postAction')->bind("blog.article.post");
+$app->get("/admin/blog/article/add", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::addAction')->bind("blog.article.add")->method('GET|POST');
 $app->get("/admin/blog/article/delete/{id}", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::deleteAction')->bind("blog.article.delete");
+//
+$app->get("/admin/realisations/add", 'TestEmbauche\Ctrl\WorkCtrl::addAction')->bind("works.create")->method('GET|POST');
+$app->get("/realisations/show/{id}", 'TestEmbauche\Ctrl\WorkCtrl::showAction')->bind("works.show");

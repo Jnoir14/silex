@@ -51,7 +51,7 @@ class UserCtrl {
             'form'  => $form->createView(),
             'error' => $app['security.last_error']($request),
         );
-        return $app['twig']->render('login.twig', $data);
+        return $app['twig']->render('/User/login.twig', $data);
     }
 
     public function logoutAction(Request $request, Application $app)

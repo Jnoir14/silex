@@ -50,7 +50,7 @@ class TestEmbaucheApplication extends \Silex\Application
                 'dbhost' => 'localhost',
                 'dbname' => 'silex',
                 'user' => 'root',
-                'password' => 'dragon34790',
+                'password' => '',
             )
         ));
 
@@ -65,6 +65,10 @@ class TestEmbaucheApplication extends \Silex\Application
 
         $app['repository.user'] = $app->share(function ($app) {
             return new \TestEmbauche\Repository\UserRepository($app['db'], $app['security.encoder.digest']);
+        });
+
+        $app['repository.work'] = $app->share(function ($app) {
+            return new \TestEmbauche\Repository\WorkRepository($app['db']);
         });
 
         // Error

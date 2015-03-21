@@ -1,12 +1,19 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: joel
+ * Date: 20/03/15
+ * Time: 14:09
+ */
 
 namespace TestEmbauche\Model;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class Article
-{
+
+class Work {
     /**
-     * Article id.
+     * Comment id.
      *
      * @var integer
      */
@@ -27,11 +34,13 @@ class Article
     protected $content;
 
     /**
-     * Category.
+     * Image
      *
-     * @var \TestEmbauche\Model\Category
+     * @var string
      */
-    protected $category;
+    protected $image;
+
+    protected $file;
 
     /**
      * When the comment entity was created.
@@ -70,14 +79,26 @@ class Article
         $this->content = $content;
     }
 
-    public function getCategory()
-    {
-        return $this->category;
+    public function getImage() {
+        // Make sure the image is never empty.
+        if (empty($this->image)) {
+            $this->image = 'placeholder.gif';
+        }
+
+        return $this->image;
     }
 
-    public function setCategory($category)
+    public function setImage($image) {
+        $this->image = $image;
+    }
+
+    public function getFile() {
+        return $this->file;
+    }
+
+    public function setFile(UploadedFile $file = null)
     {
-        $this->category = $category;
+        $this->file = $file;
     }
 
 
@@ -90,4 +111,4 @@ class Article
     {
         $this->createdAt = $createdAt;
     }
-}
+} 

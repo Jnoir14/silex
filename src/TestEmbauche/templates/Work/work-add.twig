@@ -2,10 +2,10 @@
 {% block metaTitleContent %}Test d'embauche{% endblock %}
 {% block h1Content %}Test d'embauche{% endblock %}
 {% block content %}
-    {% if is_granted('ROLE_ADMIN') %}
     <div class="col-center">
-        <p>Créer une catégorie</p>
-        {{ form(form) }}
+        <h1>Creation Réalisation</h1>
+        <form action="" {{ form_enctype(form) }} method="post">
+            {{ form_widget(form) }}
+        </form>
     </div>
-    {% endif %}
 {% endblock %}

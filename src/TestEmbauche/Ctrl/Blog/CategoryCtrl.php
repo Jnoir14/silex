@@ -18,26 +18,18 @@ class CategoryCtrl
      * Non pertinant
      */
 
-    public function createAction( Application $app)
+    public function addAction(Request $request, Application $app)
     {
-        $category = new Category();
-        $form = $app['form.factory']->create(new CategoryType(),$category);
-        return $app['twig']->render('Blog/Category/blog-add-category.twig', array('form' => $form->createView()));
-    }
-
-    public function postAction(Request $request, Application $app)
-    {
-        $form = $app['form.factory']->create(new CategoryType());
+        $category =  new Category();
+        $form = $app['form.factory']->create(new CategoryType(), $category);
         if ($request->isMethod('POST')) {
             $form->bind($request);
             if ($form->isValid()) {
-                $dataCategory = $form->getData();
-                $category =  new Category();
-                $category->setName($dataCategory['name']);
                 $app['repository.category']->save($category);
+                return $app->redirect($app['url_generator']->generate('blog'));
             }
         }
-        return $app['url_generator']->generate('blog');
+        return $app['twig']->render('Blog/Category/blog-add-category.twig', array('form' => $form->createView()));
     }
 
     /*
@@ -46,6 +38,6 @@ class CategoryCtrl
     public function deleteAction( Application $app, $id)
     {
         $app['repository.category']->delete();
-        return $app['url_generator']->generate('blog');
+        return $app->redirect($app['url_generator']->generate('blog'));
     }
 }
