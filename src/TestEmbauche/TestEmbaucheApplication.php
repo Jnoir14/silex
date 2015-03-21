@@ -33,7 +33,7 @@ class TestEmbaucheApplication extends \Silex\Application
         // twig
         $app->register(
             new \Silex\Provider\TwigServiceProvider(),
-			$this->_configArray
+			$this->_configArray['twig']
         );
 
         $app->register(new \Silex\Provider\TranslationServiceProvider(), array(
@@ -50,7 +50,7 @@ class TestEmbaucheApplication extends \Silex\Application
                 'dbhost' => 'localhost',
                 'dbname' => 'silex',
                 'user' => 'root',
-                'password' => '',
+                'password' => $this->_configArray['password']
             )
         ));
 

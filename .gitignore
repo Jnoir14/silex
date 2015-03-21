@@ -48,3 +48,12 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
+#Image
+/wab/img
+
+#Config
+config.inc.sample.php
+/config.inc.sample.php
+
+#Vendor
+/vendor

@@ -1,5 +1,6 @@
 <?php
 return array(
-    'twig.path' => __DIR__.'/src/TestEmbauche/templates',
-    'debug' => true
+    'twig'  => array('twig.path' => __DIR__.'/src/TestEmbauche/templates'),
+    'debug' => true,
+    'password' => '*',
 );
