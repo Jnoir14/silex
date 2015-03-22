@@ -19,9 +19,10 @@ $app->get("/admin/", 'TestEmbauche\Ctrl\Blog\AdminCtrl::indexAction')->bind("adm
 $app->get("/user/add", 'TestEmbauche\Ctrl\UserCtrl::addAction')->bind("user.add")->method('GET|POST');
 //ADMIN=>BLOG=>CATEGORY
 $app->get("/admin/blog/category/add", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::addAction')->bind("blog.category.add")->method('GET|POST');
-$app->post("/admin/blog/delete", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::deleteAction')->bind("blog.category.delete");
+$app->post("/admin/blog/category/delete", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::deleteAction')->bind("blog.category.delete");
 //BLOG=>ARTICLE
 $app->get("/admin/blog/article/add", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::addAction')->bind("blog.article.add")->method('GET|POST');
+$app->get("/admin/blog/article/edit/{id}", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::editAction')->bind("blog.article.edit")->method('GET|POST');
 $app->get("/admin/blog/article/delete/{id}", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::deleteAction')->bind("blog.article.delete");
 //
 $app->get("/admin/realisations/add", 'TestEmbauche\Ctrl\WorkCtrl::addAction')->bind("works.create")->method('GET|POST');

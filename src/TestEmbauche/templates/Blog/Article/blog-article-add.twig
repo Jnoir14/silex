@@ -1,9 +1,12 @@
 {% extends 'layout.twig' %}
+{% set active = 'blog' %}
 {% block metaTitleContent %}Test d'embauche{% endblock %}
 {% block h1Content %}Test d'embauche{% endblock %}
 {% block content %}
-    <div class="col-center">
-        <h1>Creation Article</h1>
-        {{ form(form) }}
+    <div class="container">
+        <div class="col-center">
+            <h1>Creation Article</h1>
+            {{ form(form) }}
+        </div>
     </div>
 {% endblock %}

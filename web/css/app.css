@@ -47,7 +47,7 @@ p, a, article, h1, h2, h3, h4{
 .header-h1{color: #01DFD7;}
 .header-h1:hover{color:s rgba(0, 0, 0, 0.78); text-decoration: none;}
 header .frise{  width: 25%;  margin: 0 auto;}
-header a{color: rgba(0, 0, 0, 0.72);}
+header a{color: rgba(0, 0, 0, 0.72); position: relative;}
 
 
 /*Footer*/
@@ -65,5 +65,4 @@ header a{color: rgba(0, 0, 0, 0.72);}
 #contact img#fleur{width:70%; margin: 0 auto;}
 
 /* WORK */
-
 

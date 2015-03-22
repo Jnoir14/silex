@@ -26,10 +26,10 @@ class ArticleCtrl
      */
     public function addAction(Request $request, Application $app)
     {
-        $articles= $app['repository.category']->getAll();
+        $category= $app['repository.category']->getAll();
         // Pas top :(
         $data= array();
-        foreach ($articles as $dataRows){
+        foreach ($category as $dataRows){
             $data +=array($dataRows['id'] => $dataRows['name']);
         }
         $article =  new Article();
@@ -47,13 +47,14 @@ class ArticleCtrl
         }
         return $app['twig']->render('Blog/Article/blog-article-add.twig', array('form' => $form->createView()));
     }
+    
 
     /*
      *
      */
     public function deleteAction( Application $app, $id)
     {
-        $app['repository.article']->delete();
+        $app['repository.article']->delete($id);
         return $app->redirect($app['url_generator']->generate('blog'));
     }
 }

@@ -1,4 +1,5 @@
 {% extends 'layout.twig' %}
+{% set active = 'workpage' %}
 {% block metaTitleContent %}Test d'embauche{% endblock %}
 {% block h1Content %}Test d'embauche{% endblock %}
 {% block content %}
@@ -9,11 +10,13 @@
         <div class="item active">
             <div class="row">
                 {% for work in works %}
-                <div class="col-sm-4">
-                    <a href="{{ path('works.show',{ 'id': work.id }) }}">
-                        <img src="/img/works/{{ work.image_path }}" class="img-responsive">
-                    </a>
-                </div>
+                    {% if loop.index <= 3 %}
+                    <div class="col-sm-4">
+                        <a href="{{ path('works.show',{ 'id': work.id }) }}">
+                            <img src="/img/works/{{ work.image_path }}" class="img-responsive">
+                        </a>
+                    </div>
+                    {% endif %}
                 {% endfor %}
             </div>
             <!--/row-->
@@ -21,14 +24,15 @@
         <!--/item-->
         <div class="item">
             <div class="row">
-                <div class="col-sm-4"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                </div>
-                <div class="col-sm-4"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                </div>
-                <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                </div>
-                <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" class="img-responsive"></a>
-                </div>
+                {% for work in works %}
+                    {% if loop.index > 3 %}
+                        <div class="col-sm-4">
+                            <a href="{{ path('works.show',{ 'id': work.id }) }}">
+                                <img src="/img/works/{{ work.image_path }}" class="img-responsive">
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
             <!--/row-->
         </div>

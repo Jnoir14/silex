@@ -1,17 +1,28 @@
 {% extends 'layout.twig' %}
+{% set active = 'blog' %}
 {% block metaTitleContent %}Test d'embauche{% endblock %}
 {% block h1Content %}Test d'embauche{% endblock %}
 {% block content %}
+<div class="container">
     <div class="col-center">
         <h1>Blog</h1>
-        <a class="" href="{{ path('blog.article.add')}}" >+Article</a>
-        <a class="" href="{{ path('blog.category.add')}}" >+Category</a>
-        <a href="{{ path('admin_logout') }}">Logout</a>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="" href="{{ path('blog.article.add')}}" >+Article</a>
+            <a class="" href="{{ path('blog.category.add')}}" >+Category</a>
+        {% endif %}
         {% for article in articles %}
-            <h2>{{ article.title }}</h2>
-            <p>{{ article.content }}</p>
-            <a class="" href="{{ path('blog.article.show', {id: article.id}) }}" >show</a>
-            <hr/>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <h2>{{ article.title }}</h2>
+                <a class="" href="{{ path('blog.article.show', {id: article.id}) }}" >Voir</a>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a class="" href="{{ path('blog.article.delete', {id: article.id})}}" >-Article</a>
+                {% endif %}
+                <hr/>
+                <p>{{ article.content }}</p>
+            </div>
+        </div>
         {% endfor %}
     </div>
+</div>
 {% endblock %}

@@ -29,9 +29,11 @@ class ArticleRepository
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder
             ->select('a.*')
-            ->from('article', 'a');
+            ->from('article', 'a')
+            ->orderBy('a.id', 'DESC');
         $statement = $queryBuilder->execute();
         $articleData = $statement->fetchAll();
+
         return $articleData;
     }
 

@@ -21,7 +21,7 @@ class UserType extends AbstractType
             ))
             ->add('mail', 'email')
             ->add('role', 'choice', array(
-                'choices' => array('ROLE_USER' => 'User', 'ROLE_ADMIN' => 'Admin')
+                'choices' => array('ROLE_USER' => 'User')
             ))
             ->add('save', 'submit');
     }
