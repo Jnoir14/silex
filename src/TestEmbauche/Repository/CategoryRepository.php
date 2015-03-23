@@ -3,6 +3,7 @@
 namespace TestEmbauche\Repository;
 
 use Doctrine\DBAL\Connection;
+use TestEmbauche\Model\Category;
 
 class CategoryRepository
 {
@@ -13,14 +14,32 @@ class CategoryRepository
         $this->db = $db;
     }
 
-    public function getAll(){
+    public function getByid($id){
+        $queryBuilder = $this->db->createQueryBuilder('a');
+        $queryBuilder
+            ->select('a.*')
+            ->from('category', 'a')
+            ->where('a.id = :id')
+            ->setParameter('id', $id);
+        $statement = $queryBuilder->execute();
+        $categoryData = $statement->fetch();
+        $categoryEntity = $this->buildCategory($categoryData);
+        return $categoryEntity;
+    }
+
+    public function getAll()
+    {
         $queryBuilder = $this->db->createQueryBuilder();
         $queryBuilder
             ->select('a.*')
             ->from('category', 'a');
         $statement = $queryBuilder->execute();
         $categoryData = $statement->fetchAll();
-        return $categoryData;
+        $data = array();
+        foreach ($categoryData as $dataRows) {
+            $data += array($dataRows['id'] => $dataRows['name']);
+        }
+        return $data;
     }
 
     public function save($category)
@@ -34,7 +53,6 @@ class CategoryRepository
 
         } else {
             $this->db->insert('category', $categoryData);
-
             $id = $this->db->lastInsertId();
             $category->setId($id);
         }
@@ -43,5 +61,12 @@ class CategoryRepository
     public function delete($id)
     {
         return $this->db->delete('category', array('id' => $id));
+    }
+
+    public function buildCategory($data){
+        $category = new Category();
+        $category->setId($data['id']);
+        $category->setName($data['name']);
+        return $category;
     }
 }

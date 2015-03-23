@@ -18,7 +18,9 @@ $app->get("/logout", 'TestEmbauche\Ctrl\UserCtrl::logoutAction')->bind("logout")
 $app->get("/admin/", 'TestEmbauche\Ctrl\Blog\AdminCtrl::indexAction')->bind("admin.index");
 $app->get("/user/add", 'TestEmbauche\Ctrl\UserCtrl::addAction')->bind("user.add")->method('GET|POST');
 //ADMIN=>BLOG=>CATEGORY
+$app->get("/admin/blog/category/{id}", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::showAction')->bind("blog.category.show");
 $app->get("/admin/blog/category/add", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::addAction')->bind("blog.category.add")->method('GET|POST');
+$app->get("/admin/blog/category/edit/{id}", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::editAction')->bind("blog.category.edit")->method('GET|POST');
 $app->post("/admin/blog/category/delete", 'TestEmbauche\Ctrl\Blog\CategoryCtrl::deleteAction')->bind("blog.category.delete");
 //BLOG=>ARTICLE
 $app->get("/admin/blog/article/add", 'TestEmbauche\Ctrl\Blog\ArticleCtrl::addAction')->bind("blog.article.add")->method('GET|POST');
