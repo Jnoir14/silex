@@ -9,10 +9,12 @@ use TestEmbauche\Model\Article;
 class ArticleRepository
 {
     protected  $db;
+    protected  $time;
 
     public function __construct(Connection $db)
     {
-        $this->db = $db;
+        $this->db   = $db;
+        $this->time = new \DateTime('now');
     }
 
     public function getByid($id){
@@ -60,7 +62,6 @@ class ArticleRepository
 
     public function save($article)
     {
-
         $articleData = array(
             'title'   =>  $article->getTitle(),
             'content' =>  $article->getContent(),
@@ -68,15 +69,11 @@ class ArticleRepository
         );
 
         if ($article->getId()) {
-            $time= new \DateTime("now");
-            $articleData['created_at'] = $time->format('ymd');
             $this->db->update('article', $articleData, array('id' => $article->getId()));
 
         } else {
-            $time= new \DateTime("now");
-            $articleData['created_at'] = $time->format('ymd');
+            $articleData['created_at'] = $this->time->format('ymd');
             $this->db->insert('article', $articleData);
-
             $id = $this->db->lastInsertId();
             $article->setId($id);
         }
@@ -92,7 +89,7 @@ class ArticleRepository
         $article->setId($articleData['id']);
         $article->setTitle($articleData['title']);
         $article->setContent($articleData['content']);
-
+        $article->setCreatedAt(\DateTime::createFromFormat('ymd', $articleData['created_at']));
         $article->setCategory($articleData['category_id']);
         return $article;
     }

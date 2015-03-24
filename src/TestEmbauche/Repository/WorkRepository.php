@@ -13,12 +13,12 @@ use TestEmbauche\Model\Work;
 
 class WorkRepository {
     protected  $db;
-    protected $time;
+    protected  $time;
 
     public function __construct(Connection $db)
     {
         $this->db = $db;
-        $this->time = new \DateTime();
+        $this->time = new \DateTime('now');
     }
 
     public function getByid($id){
@@ -52,22 +52,18 @@ class WorkRepository {
         );
 
         if ($works->getId()) {
-            $time= new \DateTime("now");
-            $newFile = $this->uploadDir($works, $time);
+            $newFile = $this->uploadDir($works, $this->time);
             if ($newFile) {
                 $worksData['image_path'] = $works->getImage();
             }
             $this->db->update('works', $worksData, array('id' => $works->getId()));
         } else {
-            $time= new \DateTime("now");
-            $worksData['created_at'] = $time->format('ymd');
-
+            $worksData['created_at'] = $this->time->format('ymd');
             $this->db->insert('works', $worksData);
-
             $id = $this->db->lastInsertId();
             $works->setId($id);
 
-            $newFile = $this->uploadDir($works, $time);
+            $newFile = $this->uploadDir($works, $this->time);
             if ($newFile) {
                 $newData = array('image_path' => $works->getImage());
                 $this->db->update('works', $newData, array('id' => $id));
@@ -78,7 +74,7 @@ class WorkRepository {
     protected function uploadDir($works, $time) {
         $file = $works->getFile();
         if ($file) {
-            $newFilename = $time->format('His') . '.' . $file->guessExtension();
+            $newFilename = $time->format('dHis') . '.' . $file->guessExtension();
             $file->move(TESTEMBAUCHE_ROOT.'/img/works/', $newFilename);
             $works->setFile(null);
             $works->setImage($newFilename);
@@ -87,17 +83,18 @@ class WorkRepository {
         return FALSE;
     }
 
+    public function delete($id)
+    {
+        return $this->db->delete('works', array('id' => $id));
+    }
+
     public function buildWork($data){
         $work = new Work();
         $work->setId($data['id']);
         $work->setTitle($data['title']);
         $work->setContent($data['content']);
         $work->setImage($data['image_path']);
+        $work->setCreatedAt(\DateTime::createFromFormat('ymd', $data['created_at']));
         return $work;
-    }
-
-    public function delete($id)
-    {
-        return $this->db->delete('works', array('id' => $id));
     }
 } 
