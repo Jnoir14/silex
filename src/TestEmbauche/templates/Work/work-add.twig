@@ -5,8 +5,12 @@
 {% block content %}
     <div class="col-center">
         <h1>Creation Réalisation</h1>
-        <form action="" {{ form_enctype(form) }} method="post">
-            {{ form_widget(form) }}
-        </form>
+        {% embed 'Layout/form_layout.twig' %}
+            {% block form %}
+                {{ form_start(form) }}
+                {% form_theme form 'Layout/form_theme.twig' %}
+                {{ form_widget(form) }}
+            {% endblock %}
+        {% endembed %}
     </div>
 {% endblock %}

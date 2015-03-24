@@ -11,8 +11,8 @@ class WorkType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', 'text', array('label' => 'Titre', 'attr' => array('class'=>'form-control')))
-            ->add('content', 'text', array('label' => 'Contenu', 'attr' => array('class'=>'form-control')))
+            ->add('title', 'text', array('label' => 'Titre'))
+            ->add('content', 'text', array('label' => 'Contenu'))
             ->add('file', 'file', array(
                 'label' => 'Image',
             ))

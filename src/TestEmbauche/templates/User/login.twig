@@ -10,7 +10,13 @@
         {% endif %}
 
         <form action="{{ path('admin_login_check') }}" method="post" novalidate {{ form_enctype(form) }} class="form-vertical">
-            {{ form_widget(form) }}
+            {% embed 'Layout/form_layout.twig' %}
+                {% block form %}
+                    {{ form_start(form) }}
+                    {% form_theme form 'Layout/form_theme.twig' %}
+                    {{ form_widget(form) }}
+                {% endblock %}
+            {% endembed %}
         </form>
     </div>
 {% endblock %}

@@ -12,9 +12,9 @@ class ArticleType extends AbstractType
     {
         $data = $builder->getData();
         $builder
-            ->add('title', 'text',array('label' => 'Titre', 'attr' => array('class'=>'form-control')))
-            ->add('content', 'textarea',array('label' => 'Contenu', 'attr' => array('class'=>'form-control')))
-            ->add('category', 'choice', array('choices' => $data->getCategoryAll(), 'attr' => array('class'=>'form-control')))
+            ->add('title', 'text')
+            ->add('content', 'textarea')
+            ->add('category', 'choice', array('choices' => $data->getCategoryAll()))
             ->add('save', 'submit', array('label' => 'Enregistrer','attr' => array('class'=>'btn btn-primary')))
         ;
     }

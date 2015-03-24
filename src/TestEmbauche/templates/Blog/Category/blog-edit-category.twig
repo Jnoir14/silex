@@ -6,7 +6,13 @@
     {% if is_granted('ROLE_ADMIN') %}
         <div class="col-center">
             <p>Editer une catégorie</p>
-            {{ form(form) }}
+            {% embed 'Layout/form_layout.twig' %}
+                {% block form %}
+                    {{ form_start(form) }}
+                    {% form_theme form 'Layout/form_theme.twig' %}
+                    {{ form_widget(form) }}
+                {% endblock %}
+            {% endembed %}
         </div>
     {% endif %}
 {% endblock %}

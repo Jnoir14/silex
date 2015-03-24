@@ -44,7 +44,7 @@ class UserCtrl {
         $form = $app['form.factory']->createBuilder('form')
             ->add('username', 'text', array('label' => 'Username', 'data' => $app['session']->get('_security.last_username')))
             ->add('password', 'password', array('label' => 'Password'))
-            ->add('login', 'submit')
+            ->add('save', 'submit', array('label' => 'Enregistrer','attr' => array('class'=>'btn btn-primary')))
             ->getForm();
 
         $data = array(
