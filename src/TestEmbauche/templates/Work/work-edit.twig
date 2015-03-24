@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+{% set active = 'workpage' %}
+{% block metaTitleContent %}Test d'embauche{% endblock %}
+{% block h1Content %}Test d'embauche{% endblock %}
+{% block content %}
+    <div class="col-center">
+        <h1>Editer Réalisation</h1>
+        <form action="" {{ form_enctype(form) }} method="post">
+            {{ form_widget(form) }}
+        </form>
+    </div>
+{% endblock %}

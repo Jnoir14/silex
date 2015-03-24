@@ -1,0 +1,23 @@
+{% extends 'layout.twig' %}
+{% set active = 'blog' %}
+{% block metaTitleContent %}Test d'embauche{% endblock %}
+{% block h1Content %}Test d'embauche{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-center">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <h1>{{ category.name }}</h1>
+                    <a class="" href="{{ path('blog.category.edit', {id: category.id}) }}" >%Editer</a>
+                </div>
+                </hr>
+                {% for article in articles %}
+                <div class="col-md-4 col-md-offset-4">
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.content }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

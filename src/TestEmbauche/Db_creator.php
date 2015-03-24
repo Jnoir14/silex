@@ -24,6 +24,28 @@ class Db_creator{
 
     public function ConstructDb($app){
         $schema = $this->db->getSchemaManager();
+
+        if (!$schema->tablesExist('article')) {
+            $article = new Table('article');
+            $article->addColumn('id', 'integer', array('unsigned' => true, 'autoincrement' => true));
+            $article->setPrimaryKey(array('id'));
+            $article->addColumn('title', 'string', array('length' => 32));
+            $article->addColumn('content', 'string', array('length' => 255));
+            $article->addColumn('created_at', 'integer', array('length' => 11));
+            $article->addColumn('category_id', 'integer', array('length' => 11));
+
+            $schema->createTable($article);
+        }
+
+        if (!$schema->tablesExist('category')) {
+            $category = new Table('category');
+            $category->addColumn('id', 'integer', array('unsigned' => true, 'autoincrement' => true));
+            $category->setPrimaryKey(array('id'));
+            $category->addColumn('name', 'string', array('length' => 32));
+
+            $schema->createTable($category);
+        }
+
         if (!$schema->tablesExist('users')) {
             $users = new Table('users');
             $users->addColumn('id', 'integer', array('unsigned' => true, 'autoincrement' => true));

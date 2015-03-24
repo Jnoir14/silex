@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+{% set active = 'blog' %}
+{% block metaTitleContent %}Test d'embauche{% endblock %}
+{% block h1Content %}Test d'embauche{% endblock %}
+{% block content %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="col-center">
+            <p>Editer une catégorie</p>
+            {{ form(form) }}
+        </div>
+    {% endif %}
+{% endblock %}
