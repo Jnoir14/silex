@@ -4,7 +4,7 @@
 out/
 .idea_modules/
 atlassian-ide-plugin.xml
-/wab/img
+/web/img
 config.inc.sample.php
 /config.inc.sample.php
 #Vendor
