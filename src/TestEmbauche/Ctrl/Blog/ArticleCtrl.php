@@ -4,7 +4,6 @@ namespace TestEmbauche\Ctrl\Blog;
 
 use TestEmbauche\Model\Article;
 use TestEmbauche\Form\Type\ArticleType;
-use TestEmbauche\Form\Type\ArticleEditType;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -33,15 +32,11 @@ class ArticleCtrl
     public function addAction(Request $request, Application $app)
     {
         $category= $app['repository.category']->getAll();
-        $article =  new Article();
-        $form = $app['form.factory']->create(new ArticleType(), $article, array('data'=>$category));
+        $article =  new Article($category);
+        $form = $app['form.factory']->create(new ArticleType(), $article);
         if ($request->isMethod('POST')) {
             $form->bind($request);
             if ($form->isValid()) {
-                $dataArticle = $form->getData();
-                $article->setTitle($dataArticle['title']);
-                $article->setContent($dataArticle['content']);
-                $article->setCategory($dataArticle['category']);
                 $app['repository.article']->save($article);
                 return $app->redirect($app['url_generator']->generate('blog'));
             }
@@ -58,19 +53,13 @@ class ArticleCtrl
     {
 
         $category = array('category_all' => $app['repository.category']->getAll());
-        $articleArray = $app['repository.article']->getById($id);
-        $data = array_merge($articleArray, $category);
-        $form = $app['form.factory']->create(new ArticleEditType(), $data);
+        $article = $app['repository.article']->getById($id);
+        $article->setCategoryAll($category);
+        $form = $app['form.factory']->create(new ArticleType(), $article);
 
         if ($request->isMethod('POST')) {
             $form->bind($request);
             if ($form->isValid()) {
-                $article =  new Article();
-                $dataArticle = $form->getData();
-                $article->setId($id);
-                $article->setTitle($dataArticle['title']);
-                $article->setContent($dataArticle['content']);
-                $article->setCategory($dataArticle['category']);
                 $app['repository.article']->save($article);
                 return $app->redirect($app['url_generator']->generate('blog'));
             }

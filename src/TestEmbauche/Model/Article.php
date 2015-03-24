@@ -34,11 +34,22 @@ class Article
     protected $category;
 
     /**
-     * When the comment entity was created.
+     * Quand l'article est crée
      *
      * @var DateTime
      */
     protected $createdAt;
+
+    /**
+     * Temporaire
+     *
+     * @var object
+     */
+    protected $categoryAll;
+
+    public function __construct($categoryAll = null){
+        $this->categoryAll = $categoryAll;
+    }
 
     public function getId()
     {
@@ -89,5 +100,15 @@ class Article
     public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    public function getCategoryAll()
+    {
+        return $this->categoryAll;
+    }
+
+    public function setCategoryAll($categoryAll)
+    {
+        $this->categoryAll = $categoryAll;
     }
 }

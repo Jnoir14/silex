@@ -23,8 +23,7 @@ class CategoryRepository
             ->setParameter('id', $id);
         $statement = $queryBuilder->execute();
         $categoryData = $statement->fetch();
-        $categoryEntity = $this->buildCategory($categoryData);
-        return $categoryEntity;
+        return $this->buildCategory($categoryData);
     }
 
     public function getAll()
@@ -35,11 +34,12 @@ class CategoryRepository
             ->from('category', 'a');
         $statement = $queryBuilder->execute();
         $categoryData = $statement->fetchAll();
-        $data = array();
-        foreach ($categoryData as $dataRows) {
-            $data += array($dataRows['id'] => $dataRows['name']);
+
+        $categoryArray = array();
+        foreach ($categoryData as $category) {
+            $categoryArray[$category['id']] = $category['name'];
         }
-        return $data;
+        return $categoryArray;
     }
 
     public function save($category)

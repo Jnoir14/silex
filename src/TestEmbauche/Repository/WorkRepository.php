@@ -8,14 +8,17 @@
 
 namespace TestEmbauche\Repository;
 use Doctrine\DBAL\Connection;
+use TestEmbauche\Model\Work;
 
 
 class WorkRepository {
     protected  $db;
+    protected $time;
 
     public function __construct(Connection $db)
     {
         $this->db = $db;
+        $this->time = new \DateTime();
     }
 
     public function getByid($id){
@@ -27,7 +30,7 @@ class WorkRepository {
             ->setParameter('id', $id);
         $statement = $queryBuilder->execute();
         $articleData = $statement->fetch();
-        return $articleData;
+        return $this->buildWork($articleData);
     }
 
     public function getAll(){
@@ -49,6 +52,11 @@ class WorkRepository {
         );
 
         if ($works->getId()) {
+            $time= new \DateTime("now");
+            $newFile = $this->uploadDir($works, $time);
+            if ($newFile) {
+                $worksData['image_path'] = $works->getImage();
+            }
             $this->db->update('works', $worksData, array('id' => $works->getId()));
         } else {
             $time= new \DateTime("now");
@@ -79,10 +87,17 @@ class WorkRepository {
         return FALSE;
     }
 
-
+    public function buildWork($data){
+        $work = new Work();
+        $work->setId($data['id']);
+        $work->setTitle($data['title']);
+        $work->setContent($data['content']);
+        $work->setImage($data['image_path']);
+        return $work;
+    }
 
     public function delete($id)
     {
-        return $this->db->delete('article', array('id' => $id));
+        return $this->db->delete('works', array('id' => $id));
     }
 } 

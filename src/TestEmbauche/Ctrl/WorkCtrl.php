@@ -42,6 +42,25 @@ class WorkCtrl
         return $app['twig']->render('Work/work-add.twig', array('form' => $form->createView()));
     }
 
+    public function editAction(Request $request, Application $app, $id)
+    {
+
+        $work = $app['repository.work']->getById($id);
+        $form = $app['form.factory']->create(new WorkType(), $work);
+
+        if ($request->isMethod('POST')) {
+            $form->bind($request);
+            if ($form->isValid()) {
+                $app['repository.work']->save($work);
+                return $app->redirect($app['url_generator']->generate('workpage'));
+            }
+        }
+        $data = array(
+            'form' => $form->createView()
+        );
+        return $app['twig']->render('Work/work-edit.twig', $data);
+    }
+
     /*
      *
      */

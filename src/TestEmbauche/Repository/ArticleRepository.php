@@ -24,7 +24,7 @@ class ArticleRepository
             ->setParameter('id', $id);
         $statement = $queryBuilder->execute();
         $articleData = $statement->fetch();
-        return $articleData;
+        return $this->buildArticle($articleData);
     }
 
     public function getByCategory($category){
@@ -92,6 +92,7 @@ class ArticleRepository
         $article->setId($articleData['id']);
         $article->setTitle($articleData['title']);
         $article->setContent($articleData['content']);
+
         $article->setCategory($articleData['category_id']);
         return $article;
     }

@@ -7,8 +7,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <a href="{{ path('works.show',{ 'id': work.id }) }}"><img src="/img/works/{{ work.image_path }}" class="img-responsive"></a>
+                    <a href="{{ path('works.show',{ 'id': work.id }) }}"><img src="/img/works/{{ work.image }}" class="img-responsive"></a>
                     <h1>{{ work.title }}</h1>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('works.edit',{ 'id': work.id }) }}"> Edit</a>
+                    {% endif %}
                     <p>{{ work.content }}</p>
                 </div>
             </div>
