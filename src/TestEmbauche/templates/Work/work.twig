@@ -25,7 +25,8 @@
         <div class="item">
             <div class="row">
                 {% for work in works %}
-                    {% if loop.index > 3 %}
+                    <!-- Limit à la galerie -->
+                    {% if loop.index > 3 and loop.index <= 6 %}
                         <div class="col-sm-4">
                             <a href="{{ path('works.show',{ 'id': work.id }) }}">
                                 <img src="/img/works/{{ work.image_path }}" class="img-responsive">
